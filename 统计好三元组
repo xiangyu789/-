@@ -1,0 +1,38 @@
+int countGoodTriplets(int* arr, int arrSize, int a, int b, int c) {
+    int i,j,k,fh=1,r=0,n;
+    for(i=0;i<arrSize-2;i++)
+    {
+        for(j=i+1;j<arrSize-1;j++)
+        {
+            for(k=j+1;k<arrSize;k++)
+            {
+                n=0;
+                if(arr[i]-arr[j]>0 && arr[i]-arr[j]<=a)
+                {
+                    n++;
+                }
+                else if(arr[i]-arr[j]<0 && -1*(arr[i]-arr[j])<=a)
+                n++;
+                else if(arr[i]-arr[j]==0)
+                n++;
+                if(arr[j]-arr[k]>0 && arr[j]-arr[k]<=b)
+                n++;
+                else if(arr[j]-arr[k]<0 && -1*(arr[j]-arr[k])<=b)
+                n++;
+                else if(arr[j]-arr[k]==0)
+                 n++;
+                if(arr[i]-arr[k]>0 && arr[i]-arr[k]<=c)
+                n++;
+                else if(arr[i]-arr[k]<0 && -1*(arr[i]-arr[k])<=c)
+                n++;
+                else if(arr[i]-arr[k]==0)
+                 n++;
+                if(n==3)
+                {
+                  r++;  
+                }
+            }
+        }
+    }
+    return r;
+}
