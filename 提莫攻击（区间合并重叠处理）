@@ -1,0 +1,16 @@
+int findPoisonedDuration(int* timeSeries, int timeSeriesSize, int duration) {
+    int r=0,i;
+    for(i=0;i<timeSeriesSize-1;++i)
+    {
+        if(timeSeries[i]+duration-1<timeSeries[i+1])
+        {
+            r+=duration;
+        }
+        else 
+        {
+            r+=timeSeries[i+1]-timeSeries[i];
+        }
+    }
+    r+=duration;
+    return r;
+}
