@@ -1,0 +1,17 @@
+class Solution {
+public:
+    bool isThree(int n) {
+        int k,m,r=0;
+        for(m=1;m<=n;++m)
+        {
+            if(n%m==0)
+            {
+                ++r;
+            }
+        }
+        if(r==3)
+        return true;
+        else 
+        return false;
+    }
+};
