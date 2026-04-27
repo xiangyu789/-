@@ -1,0 +1,35 @@
+class Solution {
+public:
+    vector<int> findEvenNumbers(vector<int>& digits) {
+        int i,j,r,a,b,c,d,m;
+        int n=digits.size();
+        vector<int> result;
+        for(i=0;i<n-1;++i)
+        {
+            if(digits[i]>digits[i+1])
+            {
+                d=digits[i];
+                digits[i]=digits[i+1];
+                digits[i+1]=d;
+            }
+        }
+        for(a=0;a<n;++a)
+        {
+            for(b=0;b<n;++b)
+            {
+                for(c=0;c<n;++c)
+                {
+                    if(digits[a]==0)continue;
+                    m=(digits[a]*100+digits[b]*10+digits[c]);
+                    if(a!=b &&a!=c && b!=c &&m%2==0)
+                    {
+                        result.push_back(m);
+                    }
+                }
+            }
+        }
+        sort(result.begin(),result.end());
+        result.erase(unique(result.begin(),result.end()),result.end());
+        return result;
+    }
+};
