@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int countQuadruplets(vector<int>& nums) {
+        int a,b,c,d,r=0;
+        int len=nums.size();
+        for(a=0;a<len-3;++a)
+        {
+            for(b=a+1;b<len-2;++b)
+            {
+                for(c=b+1;c<len-1;++c)
+                {
+                    for(d=c+1;d<len;++d)
+                    {
+                        if(nums[a]+nums[b]+nums[c]==nums[d])
+                        {
+                            ++r;
+                        }
+                    }
+                }
+            }
+        }
+        return r;
+    }
+};
