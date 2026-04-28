@@ -1,0 +1,18 @@
+class Solution {
+public:
+    string removeDigit(string number, char digit) {
+        vector<char> arr(number.begin(),number.end());
+        int i,len=arr.size();
+        string str="";
+        for(i=0;i<len;++i)
+        {
+            if(number[i]==digit)
+            {
+               string temp=number.substr(0,i);
+            temp.append(number.substr(i+1,len-1));
+            str=max(str,temp); 
+            }
+        }
+        return str;
+    }
+};
