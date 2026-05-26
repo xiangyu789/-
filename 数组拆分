@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int arrayPairSum(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int i=0,sum=0;
+        for(i=0;i<nums.size();i+=2)
+        {
+            sum+=nums[i];
+        }
+        return sum;
+    }
+};
+//使nums分为两两数组，求这些数组最小数和的最大值
