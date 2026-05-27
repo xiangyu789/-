@@ -1,0 +1,28 @@
+class Solution {
+public:
+    vector<int> findErrorNums(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int i=0,j=0,k=0;
+        vector <int> arr(2);
+        int n=nums.size();
+        for(i=0;i<n;++i)
+        {
+            j=nums[i];
+            if(j==k)
+            {
+                arr[0]=k;
+            }
+            else if(j-k>1)
+            {
+                arr[1]=k+1;
+            }
+            k=j;
+        }
+        if (nums[n - 1] != n)
+         { 
+            arr[1] = n;          
+        }
+        return arr;
+    }
+};
+//找出被改变的数，并更改回来
