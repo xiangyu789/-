@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int dominantIndex(vector<int>& nums) {
+        int n=nums.size();
+        int i=0,j=0;
+        vector <int> arr(n);
+        arr=nums;
+        sort(nums.begin(),nums.end());
+        if(nums[n-1]>=2*nums[n-2])
+        {
+            for(i=0;i<n;++i)
+            {
+                if(nums[n-1]==arr[i])
+                j=i;
+            }
+            return j;
+        }
+        else return -1;
+    }
+};
